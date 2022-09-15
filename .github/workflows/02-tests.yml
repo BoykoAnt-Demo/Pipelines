@@ -30,4 +30,4 @@ jobs:
     - name: Test Report
       uses: EnricoMi/publish-unit-test-result-action@v2
       with:
-       trx_files: "**/*.trx"
+       trx_files: "src/test_results/*.trx"
