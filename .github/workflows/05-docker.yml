@@ -7,7 +7,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  regular:
+
+    runs-on: ubuntu-22.04
+
+    steps:
+    - run: cat /etc/lsb-release
+
+
+  container:
 
     runs-on: ubuntu-22.04
 
