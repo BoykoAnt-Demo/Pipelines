@@ -1,0 +1,17 @@
+{
+  "name": "dummy",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test-cli": "node ./spec/support/jasmine-cli.js",
+    "test-trx": "node ./spec/support/jasmine-trx.js"
+  },
+  "author": "Boyko Ant",
+  "license": "MIT",
+  "devDependencies": {
+    "jasmine": "^4.4.0",
+    "jasmine-console-reporter": "^3.1.0",
+    "jasmine-trx-reporter": "^2.3.0"
+  }
+}
