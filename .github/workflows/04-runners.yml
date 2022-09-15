@@ -29,14 +29,8 @@ jobs:
     - run: npm ci
       working-directory: src
 
-    - run: npm run test-trx
+    - run: npm run test-cli
       working-directory: src
-      
-    - name: Test Report
-      uses: EnricoMi/publish-unit-test-result-action@v2
-      with:
-       trx_files: "src/test_results/*.trx"
-       check_name: Test results for ${{ matrix.node-version }} on ${{ matrix.runner }}
        
     - run: npm start
       working-directory: src
