@@ -30,7 +30,6 @@ jobs:
     - name: Test Report
       uses: dorny/test-reporter@v1
       with:
-        name: Test report
         path: test_results/*.trx
         reporter: jest-junit
         working-directory: src
