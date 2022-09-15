@@ -27,7 +27,7 @@ jobs:
     - run: npm ci
       working-directory: src
 
-    - run: npm run test-cli
+    - run: npm run test-trx
       working-directory: src
       
     - name: Test Report
