@@ -19,6 +19,7 @@ jobs:
       with:
         node-version: 18.x
         cache: 'npm'
+        working-directory: src
         
     - run: npm ci
       working-directory: src
