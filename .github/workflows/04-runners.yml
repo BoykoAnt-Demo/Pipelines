@@ -36,6 +36,7 @@ jobs:
       uses: EnricoMi/publish-unit-test-result-action@v2
       with:
        trx_files: "src/test_results/*.trx"
-       check_name: Test results for ${{ matrix.node-version }}
+       check_name: Test results for ${{ matrix.node-version }} on ${{ matrix.runner }}
        
     - run: npm start
+      working-directory: src
