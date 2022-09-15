@@ -11,8 +11,18 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
-        runner: [ubuntu-latest, windows-latest]
+        node-version:
+         - 16.x
+         - 18.x
+        runner:
+         - windows-2022
+         - windows-2019
+         - ubuntu-22.04
+         - ubuntu-20.04
+         - ubuntu-18.04
+         - macos-12
+         - macos-11
+         - macos-10.5
 
     runs-on: ${{ matrix.runner }}
 
