@@ -1,0 +1,37 @@
+# This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+
+name: Node.js CI
+
+on:
+   workflow_dispatch:
+
+jobs:
+  build:
+  
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: 18.x
+        cache: 'npm'
+        cache-dependency-path: src/package-lock.json
+        
+    - run: npm ci
+      working-directory: src
+
+    - run: npm run test-trx
+      working-directory: src
+      
+    - name: Test Report
+      uses: dorny/test-reporter@v1
+      with:
+        artifact: test-results
+        name: Test report
+        path: test_results/*.xml
+        reporter: jest-junit
+        working-directory: src
